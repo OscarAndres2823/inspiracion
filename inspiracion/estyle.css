@@ -1,0 +1,129 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--background);
+    color: var(--text-color);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+:root {
+    /* Tema claro */
+    --background: #f0f8ff;
+    --text-color: #333;
+    --button-bg: #4caf50;
+    --button-hover: #45a049;
+    --quote-bg: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] {
+    /* Tema oscuro */
+    --background: #121212;
+    --text-color: #ffffff;
+    --button-bg: #bb86fc;
+    --button-hover: #985eff;
+    --quote-bg: rgba(30, 30, 30, 0.9);
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: var(--quote-bg);
+    border-radius: 15px;
+    transition: background 0.5s;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+/* Quote Box */
+.quote-box {
+    padding: 20px;
+    background: var(--quote-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#quote-text {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    animation: fadeIn 0.8s;
+    color: var(--text-color);
+}
+
+/* Controls */
+.controls button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.controls button:hover {
+    background-color: var(--button-hover);
+}
+
+.auto-switch {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    color: var(--text-color);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    #quote-text {
+        font-size: 1.2rem;
+    }
+
+    .controls button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
